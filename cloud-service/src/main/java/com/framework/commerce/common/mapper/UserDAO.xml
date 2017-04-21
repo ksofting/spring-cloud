@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.framework.commerce.common.mapper.UserDAO" >
+  <resultMap id="CountResultMap" type="com.framework.commerce.common.vo.UserVo" >
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="selectUserCount" parameterType="java.lang.String" resultMap="CountResultMap">
+  	select name,age from user where name=#{userName}
+  </select>
+</mapper>
